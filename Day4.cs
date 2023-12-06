@@ -18,7 +18,7 @@ namespace AdventOfCode2023
                 var winningNumbers = parts[0].Split(' ').Where(x => int.TryParse(x, out _)).Select(int.Parse).ToList();
                 var myNumbers = parts[1].Split(' ').Where(x => int.TryParse(x, out _)).Select(int.Parse).ToList();
                 var matchingNumbersAmount = winningNumbers.Intersect(myNumbers).Count();
-                //Add this card to the cards, or add 1 number to this card
+                //Add this card to the cards, or add 1 copy if it already exists
                 if (!cards.ContainsKey(cardNumberPosition + 1))
                     cards.Add(cardNumberPosition + 1, 1);
                 else
@@ -33,14 +33,9 @@ namespace AdventOfCode2023
                         {
                             var copyCard = cardNumberPosition + 1 + i;
                             if (!cards.TryGetValue(copyCard, out int card))
-                            {
                                 cards.Add(copyCard, 1);
-                            }
                             else
-                            {
                                 cards[copyCard]++;
-                            }
-
                         }
                     }
                 }
