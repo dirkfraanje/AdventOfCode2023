@@ -14,4 +14,6 @@ using System.Text;
 //Day6.Part1();
 //Day6.Part2();
 //Day7.Part1();
-Day7Part2.Part2();
+//Day7Part2.Part2();
+//Day8.Part1();
+Day8Part2.Part2();
